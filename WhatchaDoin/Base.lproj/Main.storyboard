@@ -328,6 +328,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Task Management" id="RhB-0g-yeo"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="TaskTabView" destination="X6L-33-ytL" id="xns-hB-7Gj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVb-QZ-xqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -348,8 +351,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cyz-zL-J71"/>
-        <segue reference="weh-HZ-QCY"/>
         <segue reference="ffW-gZ-Li0"/>
+        <segue reference="weh-HZ-QCY"/>
+        <segue reference="aHq-oo-yhY"/>
     </inferredMetricsTieBreakers>
 </document>

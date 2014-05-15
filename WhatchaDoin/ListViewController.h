@@ -11,6 +11,8 @@
 @interface ListViewController : PFQueryTableViewController
 
 {
+    IBOutlet UITableView *TaskTabView;
+    
     //IBOutlet UIBarButtonItem *toggleEdit;
     NSString *List;
     NSDictionary *params;

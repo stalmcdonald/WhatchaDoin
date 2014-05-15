@@ -54,12 +54,12 @@
     refreshData =0;
 	// Do any additional setup after loading the view, typically from a nib.
     
-//    //edit
-//    UIBarButtonItem *editButton =[[UIBarButtonItem alloc]initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(toggleEdit)];
-//    self.navigationController.navigationBar.tintColor=[UIColor colorWithRed:0.702 green:0 blue:0 alpha:1]; /* red #b30000*/
-//    self.tabBarController.tabBar.tintColor =[UIColor colorWithRed:0.702 green:0 blue:0 alpha:1]; /* red #b30000*/
-//    self.navigationItem.rightBarButtonItem = editButton;
-//    self.navigationItem.rightBarButtonItem = editButton;
+    //edit
+    UIBarButtonItem *editButton =[[UIBarButtonItem alloc]initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(toggleEdit)];
+    self.navigationController.navigationBar.tintColor=[UIColor colorWithRed:0.702 green:0 blue:0 alpha:1]; /* red #b30000*/
+    self.tabBarController.tabBar.tintColor =[UIColor colorWithRed:0.702 green:0 blue:0 alpha:1]; /* red #b30000*/
+    self.navigationItem.rightBarButtonItem = editButton;
+    self.navigationItem.rightBarButtonItem = editButton;
     
 }
 
@@ -182,21 +182,21 @@
 
 }
 
-////edit/delete
-//-(void)toggleEdit
-//{
-//    //toggle the edit/delete view
-//    [List setEditing:!List.editing animated:YES];
-//    
-//    if (List.editing)
-//    {
-//        [self.navigationItem.rightBarButtonItem setTitle:@"Done"];
-//    }
-//    else
-//    {
-//        [self.navigationItem.rightBarButtonItem setTitle:@"Edit"];
-//    }
-//}
+//edit/delete
+-(void)toggleEdit
+{
+    //toggle the edit/delete view
+    [TaskTabView setEditing:!TaskTabView.editing animated:YES];
+    
+    if (TaskTabView.editing)
+    {
+        [self.navigationItem.rightBarButtonItem setTitle:@"Done"];
+    }
+    else
+    {
+        [self.navigationItem.rightBarButtonItem setTitle:@"Edit"];
+    }
+}
 //
 //
 //-(IBAction)toggleEdit:(id)sender:(id)sender{
