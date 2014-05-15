@@ -11,6 +11,7 @@
 @interface ListViewController : PFQueryTableViewController
 
 {
+    //IBOutlet UIBarButtonItem *toggleEdit;
     NSString *List;
     NSDictionary *params;
     NSInteger counter;
@@ -18,6 +19,7 @@
 }
 
 - (IBAction)logoutBttn :(id)sender;
+//-(IBAction)toggleEdit:(id)sender;
 
 //Network connection status
 @property (assign, nonatomic) IBOutlet UILabel * networkConnection;

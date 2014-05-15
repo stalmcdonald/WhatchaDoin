@@ -15,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordEntry;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 - (IBAction)didTapSignup:(id)sender;
-
+-(BOOL)validateEmail: (NSString *) vaildEmailObject;
 
 @end

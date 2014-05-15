@@ -16,6 +16,13 @@
 
 @synthesize usernameEntry, emailEntry, passwordEntry, activityIndicator;
 
+-(BOOL)validateEmail: (NSString *) vaildEmailObject {
+    NSString *email = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", email];
+    
+    return [emailTest evaluateWithObject:vaildEmailObject];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,13 +65,30 @@
     NSString *pass = [passwordEntry text];
     NSString *email = [emailEntry text];
     
+    /*
+     validation Length checker    *******
+     */
+    
     //checks to make sure user information has at least 4 characters
     if ([user length] < 4 || [pass length] < 4) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Entry" message:@"Username and Password must both be at least 5 characters." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Entry" message:@"Username and Password must both be at least 4 characters." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
         [alert show];
+        
+    //checks to make sure user email is at least 8 characters
     } else if ([email length] < 8) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Entry" message:@"Please enter your email address." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Entry" message:@"Email must be at least 8 characters." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
         [alert show];
+      
+        /*
+         validation Email checker    *******
+         */
+        
+        //checks to make sure user entered a proper email
+        
+    } else if ([self validateEmail: [emailEntry text]] ==1) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect Entry" message:@"Invalid Email." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [alert show];
+        
     } else {
         
         //indicates activity
@@ -88,6 +112,7 @@
     }
     
 }
+
 
 //cancels screen and goes back to Registration
 - (void)didTapBack:(id)sender {

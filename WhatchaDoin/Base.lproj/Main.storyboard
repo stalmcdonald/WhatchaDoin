@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FeY-pR-TZW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FeY-pR-TZW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -77,7 +77,7 @@
         <!--View Controller - WhatchaDoin-->
         <scene sceneID="xGM-5W-N9N">
             <objects>
-                <viewController id="qY2-Yi-Ee0" customClass="ViewController" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="qY2-Yi-Ee0" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6CY-af-j2W"/>
                         <viewControllerLayoutGuide type="bottom" id="0fV-1O-dtZ"/>
@@ -111,20 +111,6 @@
                                 <rect key="frame" x="137" y="204" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7V-sB-FNQ">
-                                <rect key="frame" x="20" y="517" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.70366674269999996" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network Check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3t-yo-6HA">
-                                <rect key="frame" x="19" y="541" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.45098042490000001" green="0.30196079609999998" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ncG-CL-drF">
                                 <rect key="frame" x="6" y="100" width="307" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,8 +127,6 @@
                     <connections>
                         <outlet property="indicator" destination="Afr-Xi-Qvv" id="AcF-B7-Rt1"/>
                         <outlet property="logInButton" destination="5Qu-wa-KYt" id="jMi-fp-pcz"/>
-                        <outlet property="networkConnection" destination="y3t-yo-6HA" id="Ca2-AT-gpk"/>
-                        <outlet property="networkStatus" destination="n7V-sB-FNQ" id="ixw-ti-Kac"/>
                         <segue destination="mN0-hQ-cVi" kind="push" identifier="gotoLogUserView" id="cyz-zL-J71"/>
                         <segue destination="kv9-ZU-RL4" kind="push" identifier="gotoMainView" id="xJb-dA-dlY"/>
                         <segue destination="iMO-Ev-pKu" kind="push" identifier="gotoSignUpView" id="weh-HZ-QCY"/>
@@ -256,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="add a task to complete" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PBZ-sE-iPO">
-                                <rect key="frame" x="7" y="117" width="307" height="30"/>
+                                <rect key="frame" x="7" y="154" width="307" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -270,15 +254,31 @@
                                 </state>
                                 <connections>
                                     <action selector="addItem:" destination="lTo-xW-SVm" eventType="touchUpInside" id="Evm-bS-Ytx"/>
-                                    <segue destination="kv9-ZU-RL4" kind="modal" id="aob-Qf-WF3"/>
+                                    <segue destination="kv9-ZU-RL4" kind="push" identifier="gotoMainView" id="Gcj-lI-fng"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-DX-68f">
+                                <rect key="frame" x="7" y="82" width="307" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.70366674269999996" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network Check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sf8-tx-Djs">
+                                <rect key="frame" x="7" y="111" width="307" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.45098042490000001" green="0.30196079609999998" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98823535439999999" green="0.98823535439999999" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="txS-RO-NG1"/>
                     <connections>
                         <outlet property="item" destination="PBZ-sE-iPO" id="pbZ-Pf-3jd"/>
+                        <outlet property="networkConnection" destination="Sf8-tx-Djs" id="h5p-VI-TUY"/>
+                        <outlet property="networkStatus" destination="Ocf-DX-68f" id="SdT-HT-b7w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2eC-iu-13o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -289,13 +289,13 @@
         <scene sceneID="HPN-no-UtW">
             <objects>
                 <tableViewController id="kv9-ZU-RL4" userLabel="List View Controller" customClass="ListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="X6L-33-ytL">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="X6L-33-ytL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.98823535439999999" green="0.98823535439999999" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
                         <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BIZ-33-gk6">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="46"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.98039221759999995" green="0.98039221759999995" blue="0.93333339689999995" alpha="1" colorSpace="deviceRGB"/>
                             <rect key="contentStretch" x="1.3877787807814457e-17" y="0.0" width="0.59999999999999964" height="1"/>
@@ -308,7 +308,7 @@
                             </connections>
                         </button>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y2D-N2-Sy5">
-                            <rect key="frame" x="0.0" y="112" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="Logout">
@@ -320,20 +320,6 @@
                                 <segue destination="mN0-hQ-cVi" kind="push" identifier="gotoLogUserView" id="aHq-oo-yhY"/>
                             </connections>
                         </button>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pcG-Oz-aZk">
-                                <rect key="frame" x="0.0" y="68" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pcG-Oz-aZk" id="IF4-qb-IjC">
-                                    <rect key="frame" x="0.0" y="0.0" width="281" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.98823535439999999" green="0.98823535439999999" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
-                                <connections>
-                                    <segue destination="lTo-xW-SVm" kind="modal" id="dIC-YS-8SE"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="kv9-ZU-RL4" id="IJf-En-jFB"/>
                             <outlet property="delegate" destination="kv9-ZU-RL4" id="f7g-7P-elg"/>
@@ -362,9 +348,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jby-Ex-mRJ"/>
-        <segue reference="aHq-oo-yhY"/>
-        <segue reference="TjC-3K-mKe"/>
-        <segue reference="dIC-YS-8SE"/>
+        <segue reference="cyz-zL-J71"/>
+        <segue reference="weh-HZ-QCY"/>
+        <segue reference="ffW-gZ-Li0"/>
     </inferredMetricsTieBreakers>
 </document>

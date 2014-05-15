@@ -49,8 +49,8 @@
     
     //alert pops up if input is less than 5 characters
     
-    if ([username length] < 5 || [password length] < 5) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Entry" message:@"Username and Password must both be at least 5 characters long." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    if ([username length] < 4 || [password length] < 4) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Entry" message:@"Username and Password must both be at least 4 characters long." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
         [alert show];
     } else {
         [activityIndicator startAnimating];
@@ -59,9 +59,9 @@
             if (user) {
                 [self performSegueWithIdentifier:@"loginToMain" sender:self];
             } else {
-                //alert if credentials are wrong or network status is Offline
+                //alert if credentials are wrong
                 NSLog(@"%@",error);
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed." message:@"Check internet connection/Enter valid info." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed." message:@"Enter valid info." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
                 [alert show];
             }
         }];

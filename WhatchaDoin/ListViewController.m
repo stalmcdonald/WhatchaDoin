@@ -54,6 +54,13 @@
     refreshData =0;
 	// Do any additional setup after loading the view, typically from a nib.
     
+//    //edit
+//    UIBarButtonItem *editButton =[[UIBarButtonItem alloc]initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(toggleEdit)];
+//    self.navigationController.navigationBar.tintColor=[UIColor colorWithRed:0.702 green:0 blue:0 alpha:1]; /* red #b30000*/
+//    self.tabBarController.tabBar.tintColor =[UIColor colorWithRed:0.702 green:0 blue:0 alpha:1]; /* red #b30000*/
+//    self.navigationItem.rightBarButtonItem = editButton;
+//    self.navigationItem.rightBarButtonItem = editButton;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,20 +141,66 @@
     
 }
 
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+        PFObject *object = [self.objects objectAtIndex:indexPath.row];
+        [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self loadObjects];
+        }];
+    }
+}
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        // Delete the row from the data source
+//        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        
+//        //reset uitableviewcell textlabel with default input "empty"
+//        List = @"empty";
+//        [self.tableView reloadData]; //reloads the tabels so you can see the value.
+//        
+//    }
+//    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }   
+//}
+
 -(IBAction)logoutBttn:(id)sender {
     
     [PFUser logOut];;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+
+
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+
+}
+
+////edit/delete
+//-(void)toggleEdit
 //{
+//    //toggle the edit/delete view
+//    [List setEditing:!List.editing animated:YES];
+//    
+//    if (List.editing)
+//    {
+//        [self.navigationItem.rightBarButtonItem setTitle:@"Done"];
+//    }
+//    else
+//    {
+//        [self.navigationItem.rightBarButtonItem setTitle:@"Edit"];
+//    }
+//}
 //
-//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
 //
-//
-//    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-//
+//-(IBAction)toggleEdit:(id)sender:(id)sender{
+//    
 //}
 
 

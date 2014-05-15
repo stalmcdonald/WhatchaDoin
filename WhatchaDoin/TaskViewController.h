@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
 
 @interface TaskViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *item;
 - (IBAction)addItem:(id)sender;
+
+
+//Network connection status
+@property (assign, nonatomic) IBOutlet UILabel * networkConnection;
+@property (assign, nonatomic) IBOutlet UILabel * networkStatus;
 
 @end

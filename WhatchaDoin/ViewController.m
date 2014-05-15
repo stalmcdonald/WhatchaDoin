@@ -13,13 +13,13 @@
 
 @interface ViewController ()
 
--(void)reachabilityChanged:(NSNotification*)note;
+//-(void)reachabilityChanged:(NSNotification*)note;
 
 @end
 
 @implementation ViewController
 
-@synthesize networkConnection, networkStatus;
+//@synthesize networkConnection, networkStatus;
 
 @synthesize indicator, logInButton, signUpButton;
 
@@ -37,28 +37,28 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self checkStatus];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reachabilityChanged:)
-                                                 name:kReachabilityChangedNotification
-                                               object:nil];
-    
-    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
-    
-    reach.reachableBlock = ^(Reachability * reachability)
-    {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            networkConnection.text = @"Network Status: ONLINE";
-        });
-    };
-    
-    reach.unreachableBlock = ^(Reachability * reachability)
-    {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            networkConnection.text = @"Network Status: OFFLINE";
-        });
-    };
-    
-    [reach startNotifier];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(reachabilityChanged:)
+//                                                 name:kReachabilityChangedNotification
+//                                               object:nil];
+//    
+//    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+//    
+//    reach.reachableBlock = ^(Reachability * reachability)
+//    {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            networkConnection.text = @"Network Status: ONLINE";
+//        });
+//    };
+//    
+//    reach.unreachableBlock = ^(Reachability * reachability)
+//    {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            networkConnection.text = @"Network Status: OFFLINE";
+//        });
+//    };
+//    
+//    [reach startNotifier];
 }
 
 //comment code below to prompt login each time
@@ -88,20 +88,20 @@
 }
 
 
-//checks network status
--(void)reachabilityChanged:(NSNotification*)note
-{
-    Reachability * reach = [note object];
-    
-    if([reach isReachable])
-    {
-        networkStatus.text = @"Notification";
-    }
-    else
-    {
-        networkStatus.text = @"Offline features limited";
-    }
-}
+////checks network status
+//-(void)reachabilityChanged:(NSNotification*)note
+//{
+//    Reachability * reach = [note object];
+//    
+//    if([reach isReachable])
+//    {
+//        networkStatus.text = @"Notification";
+//    }
+//    else
+//    {
+//        networkStatus.text = @"Offline features limited";
+//    }
+//}
 
 
 //automatically skips code below if user is logged in/signed up
