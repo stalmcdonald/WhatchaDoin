@@ -74,7 +74,7 @@
     }
     else
     {
-        networkStatus.text = @"Offline features limited";
+        networkStatus.text = @"Offline features limited, new task cannot be saved.";
 //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning." message:@"Check internet connection. User input restricted." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
 //        [alert show];
     }

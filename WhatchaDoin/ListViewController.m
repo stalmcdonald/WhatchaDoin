@@ -7,10 +7,15 @@
 //
 
 #import "ListViewController.h"
+#import "DetailViewController.h"
+#import "ViewController.h"
+#import "LogUserViewController.h"
 
 @interface ListViewController ()
 
 @end
+
+//static NSString *CellIdentifier = @"TaskNameCell";
 
 @implementation ListViewController
 
@@ -54,7 +59,7 @@
     refreshData =0;
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //edit
+    //edit bar button
     UIBarButtonItem *editButton =[[UIBarButtonItem alloc]initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(toggleEdit)];
     self.navigationController.navigationBar.tintColor=[UIColor colorWithRed:0.702 green:0 blue:0 alpha:1]; /* red #b30000*/
     self.tabBarController.tabBar.tintColor =[UIColor colorWithRed:0.702 green:0 blue:0 alpha:1]; /* red #b30000*/
@@ -69,6 +74,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if ([segue.identifier isEqualToString:@"edit"]) {
+//        UITableViewCell *cell = sender;
+//        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+//    
+//        UINavigationController *navigationController = segue.destinationViewController;
+//        ViewController *viewController = (ViewController *)navigationController.topViewController;
+//        viewController. = [self.fetchedResultsController objectAtIndexPath: indexPath];
+//        
+//    }
+//}
 
 #pragma mark - Parse
 
@@ -180,6 +196,11 @@
 
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
 
+    
+    //selecting row seques to TaskViewController
+    [self performSegueWithIdentifier:@"editing" sender:self];
+
+
 }
 
 //edit/delete
@@ -196,12 +217,7 @@
     {
         [self.navigationItem.rightBarButtonItem setTitle:@"Edit"];
     }
-}
-//
-//
-//-(IBAction)toggleEdit:(id)sender:(id)sender{
-//    
-//}
 
+}
 
 @end

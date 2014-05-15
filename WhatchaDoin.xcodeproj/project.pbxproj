@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210C6E5E1924FEA80044E9B3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210C6E5D1924FEA80044E9B3 /* DetailViewController.m */; };
 		219B25CD191C0A4300608EF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219B25CC191C0A4300608EF0 /* Foundation.framework */; };
 		219B25CF191C0A4300608EF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219B25CE191C0A4300608EF0 /* CoreGraphics.framework */; };
 		219B25D1191C0A4300608EF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219B25D0191C0A4300608EF0 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210C6E5C1924FEA80044E9B3 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		210C6E5D1924FEA80044E9B3 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		219B25C9191C0A4300608EF0 /* WhatchaDoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatchaDoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		219B25CC191C0A4300608EF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		219B25CE191C0A4300608EF0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -206,6 +209,8 @@
 				219B25D3191C0A4300608EF0 /* Supporting Files */,
 				219B2613191C0C0F00608EF0 /* Reachability.h */,
 				219B2614191C0C0F00608EF0 /* Reachability.m */,
+				210C6E5C1924FEA80044E9B3 /* DetailViewController.h */,
+				210C6E5D1924FEA80044E9B3 /* DetailViewController.m */,
 			);
 			path = WhatchaDoin;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 			files = (
 				219B261F191C0F5100608EF0 /* LogUserViewController.m in Sources */,
 				219B25E3191C0A4300608EF0 /* ViewController.m in Sources */,
+				210C6E5E1924FEA80044E9B3 /* DetailViewController.m in Sources */,
 				219B2622191C0FDF00608EF0 /* ListViewController.m in Sources */,
 				219B25DD191C0A4300608EF0 /* AppDelegate.m in Sources */,
 				219B2628191C115600608EF0 /* TaskViewController.m in Sources */,
@@ -562,6 +568,7 @@
 				219B25FD191C0A4400608EF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		219B25FE191C0A4400608EF0 /* Build configuration list for PBXNativeTarget "WhatchaDoinTests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +577,7 @@
 				219B2600191C0A4400608EF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
